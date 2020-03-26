@@ -4,7 +4,7 @@ $(document).ready(function() {
     var age = parseInt($('input#age').val())
     var penguin = $('select#penguin').val()
     var frank = JSON.parse($('select#frank').val())
-    var twin = $('select#twin').val()
+    var twin = JSON.parse($('select#twin').val())
     // frank ? console.log('yes he is') : console.log('no he isnt');
     if (penguin === 'penguin') {
       $('#wolv-container').removeClass('no-show')
@@ -14,7 +14,11 @@ $(document).ready(function() {
       if (frank === true) {
         $('#wig-container').removeClass('no-show')
       } else {
-        $('#cartoon-container').removeClass('no-show')
+        if (twin === true) {
+          $('#cartoon-container').removeClass('no-show')
+        } else {
+          $('#wack-container').removeClass('no-show')
+        }
       }
     }
   })
